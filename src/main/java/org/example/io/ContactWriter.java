@@ -11,7 +11,7 @@ public class ContactWriter {
         try (FileWriter writer = new FileWriter(fileName)) {
             for (Contact contact : contacts) {
 
-                String line = String.format("%s,%s,%s,%s,\n", contact.getFirstName(), contact.getLastName(), contact.getEmail(), contact.getPhone());
+                String line = String.format("%s,%s,%s,%s\n", contact.getFirstName(), contact.getLastName(), contact.getEmail(), contact.getPhone());
                 writer.write(line);
             }
         } catch (IOException e) {

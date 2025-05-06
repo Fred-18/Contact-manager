@@ -1,4 +1,5 @@
-fred,Manunuig,0909090909,truc.com,
-momo,Momo,0909090909,truc.com,
-tata,Nana,0909090909,truc.com,
-titui,moom,0909090909,truc.com,
+fred,Manunuig,truc.com,0909090909
+momo,Momo,truc.com,0909090909
+tata,Nana,truc.com,0909090909
+titui,moom,truc.com,0909090909
+titui,moom,teex.com,0909090909

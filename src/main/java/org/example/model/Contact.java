@@ -6,7 +6,7 @@ public class Contact {
     private String phone;
     private String email;
 
-    public Contact(String firstName, String lastname, String phone, String email) {
+    public Contact(String firstName, String lastname, String email, String phone) {
         this.firstName = firstName;
         this.lastName = lastname;
         this.phone = phone;
@@ -14,8 +14,6 @@ public class Contact {
 
     }
 
-    public Contact(String firstName, String lastName, String email, int phone) {
-    }
 
     public String getFirstName() {
         return firstName;
@@ -52,7 +50,7 @@ public class Contact {
 
     @Override
     public String toString() {
-        return String.format("%s %s - %s - %s", firstName, lastName, email, phone);
+        return String.format("%s %s - %s - %s", firstName, lastName, phone, email);
     }
 
     @Override
