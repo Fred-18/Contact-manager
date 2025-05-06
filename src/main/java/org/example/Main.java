@@ -27,8 +27,8 @@ public class Main {
        List test = reader.readContactsFromFile("contacts.txt");
 
 
-        manager.deleteContact(contacts,"teex.com");
-        System.out.print(test);
+          manager.deleteContact(contacts,"teex.com");
+        System.out.println(test);
 
 
     }

@@ -3,6 +3,7 @@ package org.example.service;
 import org.example.model.Contact;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ContactManager {
@@ -14,15 +15,17 @@ public class ContactManager {
         return contact;
     }
 
-    public void deleteContact(List<Contact> contact, String email) {
-        String emailToDelete;
-        for (Contact c : contact) {
-            emailToDelete = c.getEmail();
-            if (email.equals(emailToDelete)) {
-                contact.remove(emailToDelete);
+    public void deleteContact(List<Contact> contacts, String email) {
+        Iterator<Contact> iterator = contacts.iterator();
+        while (iterator.hasNext()) {
+            Contact contact = iterator.next();
+            if (contact.getEmail().equals(email)) {
+                iterator.remove();
+                System.out.println(contact);
             }
         }
     }
+
 
 }
 
