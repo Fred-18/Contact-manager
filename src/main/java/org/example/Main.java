@@ -24,11 +24,11 @@ public class Main {
         contacts.add(manager.createContact("titui", "moom", "teex.com", "0909090909"));
 
         writer.writeContactsToFile(contacts,"contacts.txt");
-       List test = reader.readContactsFromFile("contacts.txt");
+        manager.deleteContact(contacts,"teex.com");
+       List <Contact>testAfterUpdate = reader.readContactsFromFile("contacts.txt");
+        System.out.println(testAfterUpdate);
 
 
-          manager.deleteContact(contacts,"teex.com");
-        System.out.println(test);
 
 
     }
