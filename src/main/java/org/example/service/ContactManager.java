@@ -32,16 +32,22 @@ public class ContactManager {
         }
     }
 
-    public Contact updateContact(List<Contact> contacts, String lastName) {
+    public void updateContact(List<Contact> contacts, String lastName, String theNewFirstName, String theNewEmail, String theNewPhone) {
         // Je veux iteree dans une liste de contact que je renseigne dans les params
         Iterator<Contact> iterator = contacts.iterator();
-        //Je recupere le nom de famille du contact a update
-        //J'appliaue les modifications au champs  que je veux modifer
-        // je souvegarde ma liste
-
+        while (iterator.hasNext()) {
+            Contact contact = iterator.next();
+            if (contact.getLastName().equals(lastName)) {
+                contact.setFirstName(theNewFirstName);
+                contact.setEmail(theNewEmail);
+                contact.setPhone(theNewPhone);
+            }else{
+                System.out.println();
+            }
+        }
+        ContactWriter updateListe = new ContactWriter();
+        updateListe.writeContactsToFile(contacts, "contacts.txt");
     }
-
-
 }
 
 

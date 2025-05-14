@@ -23,13 +23,14 @@ public class Main {
         contacts.add(manager.createContact("titui", "moom", "truc.com", "0909090909"));
         contacts.add(manager.createContact("titui", "moom", "teex.com", "0909090909"));
 
-        writer.writeContactsToFile(contacts,"contacts.txt");
-        manager.deleteContact(contacts,"teex.com");
-       List <Contact>testAfterUpdate = reader.readContactsFromFile("contacts.txt");
+        writer.writeContactsToFile(contacts, "contacts.txt");
+        manager.deleteContact(contacts, "teex.com");
+        List<Contact> testAfterUpdate = reader.readContactsFromFile("contacts.txt");
         System.out.println(testAfterUpdate);
 
-
-
+        manager.updateContact(contacts, "Manunuig", "Jeff", "tyty.com", "020202020202");
+        List<Contact>testAfterUpdate2 = reader.readContactsFromFile("contacts.txt");
+        System.out.println(testAfterUpdate2);
 
     }
 }
