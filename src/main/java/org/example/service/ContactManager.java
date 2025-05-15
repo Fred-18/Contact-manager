@@ -16,8 +16,8 @@ public class ContactManager {
         contacts.add(contact);
         ContactWriter writer = new ContactWriter();
         writer.writeContactsToFile(contacts, "contacts.txt");
-        return contact;
 
+        return contact;
     }
 
     public void deleteContact(List<Contact> contacts, String email) {
@@ -33,7 +33,6 @@ public class ContactManager {
     }
 
     public void updateContact(List<Contact> contacts, String lastName, String theNewFirstName, String theNewEmail, String theNewPhone) {
-        // Je veux iteree dans une liste de contact que je renseigne dans les params
         Iterator<Contact> iterator = contacts.iterator();
         while (iterator.hasNext()) {
             Contact contact = iterator.next();
@@ -41,13 +40,28 @@ public class ContactManager {
                 contact.setFirstName(theNewFirstName);
                 contact.setEmail(theNewEmail);
                 contact.setPhone(theNewPhone);
-            }else{
+            } else {
                 System.out.println();
             }
         }
         ContactWriter updateListe = new ContactWriter();
         updateListe.writeContactsToFile(contacts, "contacts.txt");
     }
+
+    public Contact getContact(List<Contact> contacts, String lastName) {
+        for (Contact contact : contacts) {
+            if (contact.getLastName().equals(lastName)) {
+                return contact;
+            }
+        }
+        System.out.println("Contact is not on the list");
+        return null;
+    }
+
+    public List getAllContacts(List<Contact> contacts) {
+        return contacts;
+    }
 }
+
 
 

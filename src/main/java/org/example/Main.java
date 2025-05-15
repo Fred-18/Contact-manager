@@ -26,11 +26,17 @@ public class Main {
         writer.writeContactsToFile(contacts, "contacts.txt");
         manager.deleteContact(contacts, "teex.com");
         List<Contact> testAfterUpdate = reader.readContactsFromFile("contacts.txt");
-        System.out.println(testAfterUpdate);
+        // System.out.println(testAfterUpdate);
 
         manager.updateContact(contacts, "Manunuig", "Jeff", "tyty.com", "020202020202");
-        List<Contact>testAfterUpdate2 = reader.readContactsFromFile("contacts.txt");
-        System.out.println(testAfterUpdate2);
+        List<Contact> testAfterUpdate2 = reader.readContactsFromFile("contacts.txt");
+        //System.out.println(testAfterUpdate2);
 
+        Contact result = manager.getContact(contacts, "");
+        System.out.println(result);
+
+        List testContacts = manager.getAllContacts(contacts);
+        System.out.println(testContacts);
     }
+
 }
