@@ -16,6 +16,9 @@ public class ContactManager {
         contacts.add(contact);
         ContactWriter writer = new ContactWriter();
         writer.writeContactsToFile(contacts, "contacts.txt");
+        // Point critique sur cette methode
+        // le fichier de sauvegarde de la liste est écrit en dur
+        // If the file dosen't exist i have to create on for save my contacts or if the file existe i have to show the path for save my datas
 
         return contact;
     }
