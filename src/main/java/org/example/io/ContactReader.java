@@ -21,7 +21,7 @@ public class ContactReader {
                     String lastName = parts[1];
                     String email = parts[2];
                     String phone = parts[3];
-                    Contact contact = new Contact(firstName, lastName, email, phone);
+                    Contact contact = new Contact(firstName, lastName, email, phone, paths);
                     contacts.add(contact);
 
                 }

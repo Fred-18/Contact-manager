@@ -1,12 +1,14 @@
 package org.example.model;
 
+import java.nio.file.Paths;
+
 public class Contact {
     private String firstName;
     private String lastName;
     private String phone;
     private String email;
 
-    public Contact(String firstName, String lastname, String email, String phone) {
+    public Contact(String firstName, String lastname, String email, String phone, Paths paths) {
         this.firstName = firstName;
         this.lastName = lastname;
         this.phone = phone;

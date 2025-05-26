@@ -4,18 +4,19 @@ import org.example.io.ContactReader;
 import org.example.io.ContactWriter;
 import org.example.model.Contact;
 
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
 
 public class ContactManager {
 
-    public Contact createContact(String firstName, String lastName, String phone, String email) {
-        Contact contact = new Contact(firstName, lastName, phone, email);
+    public Contact createContact(String firstName, String lastName, String phone, String email, Paths paths) {
+        Contact contact = new Contact(firstName, lastName, phone, email, paths);
         ContactReader reader = new ContactReader();
         List<Contact> contacts = reader.readContactsFromFile("contacts.txt");
         contacts.add(contact);
         ContactWriter writer = new ContactWriter();
-        writer.writeContactsToFile(contacts, "contacts.txt");
+        writer.writeContactsToFile(contacts, Paths.get(paths.toString()));
         // Point critique sur cette methode
         // le fichier de sauvegarde de la liste est écrit en dur
         // If the file dosen't exist i have to create on for save my contacts or if the file existe i have to show the path for save my datas
@@ -30,7 +31,7 @@ public class ContactManager {
             if (contact.getEmail().equals(email)) {
                 iterator.remove();
                 ContactWriter updateListe = new ContactWriter();
-                updateListe.writeContactsToFile(contacts, "contacts.txt");
+                updateListe.writeContactsToFile(contacts, Paths.get(""));
             }
         }
     }
@@ -48,7 +49,7 @@ public class ContactManager {
             }
         }
         ContactWriter updateListe = new ContactWriter();
-        updateListe.writeContactsToFile(contacts, "contacts.txt");
+        updateListe.writeContactsToFile(contacts, Paths paths);
     }
 
     public Contact getContact(List<Contact> contacts, String lastName) {
