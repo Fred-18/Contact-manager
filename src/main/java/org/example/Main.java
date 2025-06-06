@@ -5,9 +5,9 @@ import org.example.io.ContactWriter;
 import org.example.model.Contact;
 import org.example.service.ContactManager;
 
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -19,22 +19,8 @@ public class Main {
         ContactWriter writer = new ContactWriter();
         ContactReader reader = new ContactReader();
 
-      //  writer.writeContactsToFile(contacts, "contacts.txt");
-        manager.deleteContact(contacts, "teex.com");
-        List<Contact> testAfterUpdate = reader.readContactsFromFile("contacts.txt");
-        // System.out.println(testAfterUpdate);
 
-        manager.updateContact(contacts, "Manunuig", "Jeff", "tyty.com", "020202020202");
-        List<Contact> testAfterUpdate2 = reader.readContactsFromFile("contacts.txt");
-        //System.out.println(testAfterUpdate2);
-
-        Contact result = manager.getContact(contacts, "Manunuig");
-        System.out.println(result);
-
-        List testContacts = manager.getAllContacts(contacts);
-        System.out.println(testContacts);
-
-        System.out.println("Hello bienvenue dans votre gestionnaire de contact que voulez faire ?");
+        System.out.println("Hello bienvenue dans votre gestionnaire de contact !!!");
         // Ajouter un contact
         Scanner s = new Scanner(System.in);
         System.out.println("Veuillez entrer votre nom de famille");
@@ -46,11 +32,11 @@ public class Main {
         System.out.println("Veuillez entrer votre numéro de téléphone fixe ou mobile");
         String guessPhoneNumber = s.nextLine();
         System.out.println("veuillez entrer le nom du dossier pour sauvegarder votre contact");
-      //  Paths guessSaveInformation = s.toString(s.nextLine());
-     //   manager.createContact(guessFirstName, guessLastName, guessPhoneNumber, guessEmail,guessSaveInformation);
+        Path guessSaveInformation = Paths.get(s.nextLine());
+        manager.createContact(guessFirstName, guessLastName, guessPhoneNumber, guessEmail, guessSaveInformation);
         manager.getAllContacts(contacts);
     }
 
 }
 
-// wip
+// Mettre des tests en place et des régles

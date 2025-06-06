@@ -1,21 +1,22 @@
 package org.example.model;
 
-import java.nio.file.Paths;
+import java.nio.file.Path;
 
 public class Contact {
     private String firstName;
     private String lastName;
     private String phone;
     private String email;
+    private Path filePath;
 
-    public Contact(String firstName, String lastname, String email, String phone, Paths paths) {
+    public Contact(String firstName, String lastname, String email, String phone, Path filePath) {
         this.firstName = firstName;
         this.lastName = lastname;
         this.phone = phone;
         this.email = email;
+        this.filePath = filePath;
 
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -48,6 +49,15 @@ public class Contact {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Path getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(Path filePath) {
+        this.filePath = filePath;
+
     }
 
     @Override

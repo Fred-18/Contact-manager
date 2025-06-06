@@ -2,5 +2,4 @@ Jeff,Manunuig,tyty.com,020202020202
 momo,Momo,truc.com,0909090909
 tata,Nana,truc.com,0909090909
 titui,moom,truc.com,0909090909
-Jack,Dupont ,0909090909,jack@gmail.com
-Fred,Nobre,0192837465,tutut@gmail.com
+dydyn,fred,9009090909,eeeee@gmail.com
