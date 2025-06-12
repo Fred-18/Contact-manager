@@ -1,5 +1,3 @@
-Jeff,Manunuig,tyty.com,020202020202
-momo,Momo,truc.com,0909090909
-tata,Nana,truc.com,0909090909
-titui,moom,truc.com,0909090909
-dydyn,fred,9009090909,eeeee@gmail.com
+Tomy,roy,0987654321,tomy@gmail.com
+Peters,Jordan,09876543211,peters@gmail.com
+Hazard,Torgan,098765432125454,tiyi@gmail.com

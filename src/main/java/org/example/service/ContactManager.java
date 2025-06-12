@@ -11,8 +11,11 @@ import java.util.List;
 
 public class ContactManager {
 
-    public Contact createContact(String firstName, String lastName, String phone, String email, Path paths) {
+    public Contact createContact(String firstName, String lastName, String phone, String email, Path paths) throws Exception {
         Contact contact = new Contact(firstName, lastName, phone, email, paths);
+        contact.firstNameFirstCharacterOnUpperCase();
+        contact.lastNameFirstCharacterOnUpperCase();
+        contact.checkPhoneNumber();
         ContactReader reader = new ContactReader();
         List<Contact> contacts = reader.readContactsFromFile(paths);
         contacts.add(contact);
@@ -20,6 +23,10 @@ public class ContactManager {
         writer.writeContactsToFile(contacts, Paths.get(paths.toString()));
 
         return contact;
+    }
+
+    private String toString(char c) {
+        return new String(new char[]{c});
     }
 
     public void deleteContact(List<Contact> contacts, String email) {

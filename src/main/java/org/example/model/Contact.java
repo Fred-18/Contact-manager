@@ -74,4 +74,24 @@ public class Contact {
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
+
+    public void firstNameFirstCharacterOnUpperCase() {
+        String name = getFirstName();
+        String formatted = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+        setFirstName(formatted);
+    }
+
+    public void lastNameFirstCharacterOnUpperCase() {
+        String name = getLastName();
+        String formatted = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+        setlastName(formatted);
+    }
+
+    public void checkPhoneNumber() throws Exception {
+        String phone = getPhone();
+        System.out.println(phone);
+        if (phone.length() != 10) {
+            throw new Exception("A phone number must have 10 numbers");
+        }
+    }
 }

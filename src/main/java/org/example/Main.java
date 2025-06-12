@@ -11,14 +11,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("Hello world!");
 
         ContactManager manager = new ContactManager();
         ArrayList<Contact> contacts = new ArrayList<Contact>();
         ContactWriter writer = new ContactWriter();
         ContactReader reader = new ContactReader();
-
 
         System.out.println("Hello bienvenue dans votre gestionnaire de contact !!!");
         // Ajouter un contact
