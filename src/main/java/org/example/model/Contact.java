@@ -87,11 +87,22 @@ public class Contact {
         setlastName(formatted);
     }
 
-    public void checkPhoneNumber() throws Exception {
+    public String checkPhoneNumber() {
         String phone = getPhone();
         System.out.println(phone);
         if (phone.length() != 10) {
-            throw new Exception("A phone number must have 10 numbers");
+            return "A phone number must have 10 numbers";
         }
+        return phone;
+    }
+
+    public String checkFirstName() {
+        String firstName = getFirstName();
+        if (firstName == null || firstName.isBlank()) {
+            return "First name missing !!!";
+        } else if (firstName.length() < 3) {
+            return "A first name must have at least 3 characters";
+        }
+        return firstName;
     }
 }
