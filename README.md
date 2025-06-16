@@ -78,7 +78,7 @@ java -cp out org.example.Main
 
 ## 🙋‍♂️ Auteur
 
-- Projet développé par Fred, dans le cadre de sa montée en compétences en Java
+- Projet développé par Moi, dans le cadre de ma montée en compétences en Java
 - Objectif : structuration d’une application complète, sans ORM, avec gestion de fichiers
 
 ## 📄 Licence
