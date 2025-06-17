@@ -11,8 +11,10 @@ import java.util.List;
 
 public class ContactManager {
 
-    public Contact createContact(String firstName, String lastName, String phone, String email, Path paths) throws Exception {
+    public Contact createContact(String firstName, String lastName, String phone, String email, Path paths) {
         Contact contact = new Contact(firstName, lastName, phone, email, paths);
+        contact.checkFirstName();
+        contact.checkLastName();
         contact.firstNameFirstCharacterOnUpperCase();
         contact.lastNameFirstCharacterOnUpperCase();
         contact.checkPhoneNumber();
