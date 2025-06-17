@@ -77,21 +77,24 @@ public class Contact {
 
     public void firstNameFirstCharacterOnUpperCase() {
         String name = getFirstName();
-        String formatted = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
-        setFirstName(formatted);
+        if (name != null && !name.isEmpty()) {
+            String formatted = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+            setFirstName(formatted);
+        }
     }
 
     public void lastNameFirstCharacterOnUpperCase() {
         String name = getLastName();
-        String formatted = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
-        setlastName(formatted);
+        if (name != null && !name.isEmpty()) {
+            String formatted = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+            setlastName(formatted);
+        }
     }
 
     public String checkPhoneNumber() {
         String phone = getPhone();
-        System.out.println(phone);
         if (phone.length() != 10) {
-            return "A phone number must have 10 numbers";
+            throw new IllegalArgumentException("A phone number must have 10 numbers");
         }
         return phone;
     }
@@ -99,10 +102,21 @@ public class Contact {
     public String checkFirstName() {
         String firstName = getFirstName();
         if (firstName == null || firstName.isBlank()) {
-            return "First name missing !!!";
+            throw new IllegalArgumentException("First name missing !!!");
         } else if (firstName.length() < 3) {
-            return "A first name must have at least 3 characters";
+            throw new IllegalArgumentException("A first name must have at least 3 characters");
         }
         return firstName;
     }
+
+    public String checkLastName() {
+        String lastName = getLastName();
+        if (lastName == null || lastName.isBlank()) {
+            throw new IllegalArgumentException("Last name missing !!!");
+        } else if (lastName.length() < 3) {
+            throw new IllegalArgumentException("A last name must have at least 3 characters");
+        }
+        return lastName;
+    }
+// todo redondence il y a un truc a faire
 }
