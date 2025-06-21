@@ -5,15 +5,15 @@ import java.nio.file.Path;
 public class Contact {
     private String firstName;
     private String lastName;
-    private String phone;
     private String email;
+    private String phone;
     private Path filePath;
 
     public Contact(String firstName, String lastname, String email, String phone, Path filePath) {
         this.firstName = firstName;
         this.lastName = lastname;
-        this.phone = phone;
         this.email = email;
+        this.phone = phone;
         this.filePath = filePath;
 
     }

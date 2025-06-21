@@ -28,7 +28,8 @@ public class Main {
         String guessPhoneNumber = s.nextLine();
         System.out.println("Veuillez entrer le nom du dossier pour sauvegarder votre contact");
         Path guessSaveInformation = Paths.get(s.nextLine());
-        manager.createContact(guessFirstName, guessLastName, guessPhoneNumber, guessEmail, guessSaveInformation);
+        manager.createContact(guessFirstName, guessLastName, guessEmail, guessPhoneNumber, guessSaveInformation);
+        //todo have a message for validation
         manager.getAllContacts(contacts);
     }
 }
